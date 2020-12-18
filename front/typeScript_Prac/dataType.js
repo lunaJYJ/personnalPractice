@@ -1,0 +1,11 @@
+var count = 0;
+var str_undf;
+str_undf = "hello";
+console.log(str_undf);
+str_undf = undefined;
+console.log(str_undf);
+var color;
+color = 'red';
+console.log(color);
+color = 'skyblue';
+console.log(color);

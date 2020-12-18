@@ -1,0 +1,69 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="header">
+            <div id="logobox"> 
+                <p style="padding: 20px; background-color: purple; color: white;">LOGO</p>
+            </div>
+            <div id="menu">
+                <p>홈</p>
+                <p>학사일정</p>
+                <p>입학처</p>
+                <p>찾아오시는 길</p>
+            </div>
+        </div>
+
+        <div id="main">
+            <div id="mainWrapper">
+                <div id="main-left">
+                    <p style="width: 70%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <img src="ss.jpg" alt="System_sturcture" />
+                    <p style="font-weight: bold; font-size: 18px;">How to work above picture</p>
+                    <ul>
+                        <li>User create a event</li>
+                        <li>Client function makes a appropriate AXIOS request, content type is JSON obj</li>
+                        <li>Server receive a request and make a response object</li>
+                        <li>Server send response in queue</li>
+                        <li>Client receive a response in JSON Object and script makes a few elements in document</li>
+                    </ul>
+                </div>
+                <div id="main-right">
+                    <p style="width: 70%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <img src="ERD.jpg" alt="ER-Diagram" />
+                    <p style="font-weight: bold; font-size: 18px;">Important points in DB</p>
+                    <ol>
+                        <li>User</li>
+                        <li>Fragments</li>
+                        <li>Response and Reactions</li>
+                        <li>Tags</li>
+                        <li>Frequency</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <small>All Content is creative things. but not in range of copyright.</small>
+            <small>HTML&CSS3 Practice</small>
+        </div>
+
+        <div id="typed-strings">
+            <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+            <p>It <em>types</em> out sentences.</p>
+          </div>
+          <span id="typed"></span>
+
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script>
+    var typed = new Typed('#typed', {
+        strings : ['hello world!','test','1234']
+    })
+</script>
+</html>

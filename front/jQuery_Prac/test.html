@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <style>
+        *{padding: 0; margin: 0;}
+
+        .box{
+            width: 500px;
+            height: 300px;
+            border: 5px solid black;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* display: none; */
+            border: 0;
+        }
+    
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var i = 0;
+            var tmp
+
+            function slide(i, that) { //사진 slide 함수.
+                if(i%3===0 && i>0) { //i 가 3의 배수이고 동시에 0보다 크다면.
+                    $('img').fadeIn(1000) //다시 모든 이미지를 띄우고
+                    console.log(i + " fade in")
+                } else {
+                    that.fadeOut(1000);
+                    console.log(i+" fade out") //아니라면 해당 이미지 fadeout.
+                }
+            }
+
+            $('.box').click(function(){ //i값을 늘려가면서 사진 slide
+                if(i%3===2) {
+                    slide(++i, $('.1'))
+                } else if(i%3===1) {
+                    slide(++i, $('.2'))
+                } else if(i%3===0) {
+                    slide(++i, $('.3'))
+                }
+            })
+
+            $('.imgWrap').click(() => 
+                setInterval(() => {$('.box').trigger('click')},2000) //영역을 클릭하면 2초마다 자동으로 클릭 이벤트 발생
+            )
+
+
+        });//end
+    </script>
+</head>
+<body>
+
+    <div class="box">
+        <div class="imgWrap"> <!--이건 버튼처럼 사용하는 용도.-->
+            <img class="1" src="1.jpg" alt="">
+            <img class="2" src="2.jpg" alt="">
+            <img class="3" src="3.jpg" alt="">
+        </div>
+    </div>
+    
+</body>
+</html>

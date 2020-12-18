@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Layout test</title>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="logo" class="logo">LOGO</div>
+        </div>
+        <!--//header-->
+        <div id="container">
+            <div class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item">1</li>
+                    <li class="nav_item">2</li>
+                    <li class="nav_item">3</li>
+                </ul>
+            </div>
+        <!--nav-->
+            <div id="content">
+                <h1>Hello World</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nam error ipsa commodi exercitationem fugiat praesentium tempore inventore voluptate dolore. Ipsa quisquam nemo enim explicabo aut accusantium ex ab perspiciatis.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nam error ipsa commodi exercitationem fugiat praesentium tempore inventore voluptate dolore. Ipsa quisquam nemo enim explicabo aut accusantium ex ab perspiciatis.
+                </p>
+            </div>
+        </div>
+        <footer id="footer">
+            <p class="copyright">&copy;DevJYJ All right reserved</p>
+        </footer>
+    </div>
+</body>
+<script>
+    //document.body.onload = a();
+    function a() { 
+        return new Promise(function (res,rej) {
+            var elem = document.getElementById("logo");
+            console.log(elem.innerHTML)
+            res(elem)
+        });
+    }
+
+    a().then(function(tag) {
+        var xpos = 0;
+        var end = false;
+        var id = setInterval(frame,10);
+        function frame() {
+            /*if(xpos==700) {
+                end = true
+            } else if(!end){xpos++; tag.style.left = xpos+'px'}
+            if(end) {
+                if(xpos==0)
+                    end = false
+                xpos--;
+                tag.style.left = xpos+'px'
+            }*/
+            if(xpos==700) end = true;
+            if(xpos==0) end = false;
+            if(!end) {xpos++; tag.style.left = xpos+'px'} else { xpos--; tag.style.left = xpos+'px'}
+        }
+    }).catch(function (err) {
+        console.log(err)
+    })
+   // var a = document.getElementById("logo")
+
+
+</script>
+<style>
+    body {
+        font: 14px/1.8 Arial, Hevetica, sanc-serif;
+    }
+    #wrapper {
+        width: 800px;
+        margin: 0 auto;
+        border: 1px solid #aaa
+    }
+    #header {
+        padding: 40px 10px;
+        text-align: center;
+        background: #eee;
+        margin-bottom: 20px;
+        position: relative;
+        width: 780px;
+        height: 100px;
+    }
+    #container {
+        overflow:hidden;
+        display: table;
+
+    }
+    .logo {
+        font-size: 2em;
+        font-weight: bold;
+        background: #5457de;
+        color: #fff;
+        /*display: inline-block;*/
+        padding: 0 8px;
+        position: absolute;
+
+    }
+    .nav {
+        float: left;
+        width: 150px;
+        background: #333;
+        color: #fff;
+        margin-right: 50px;
+        display: table-cell;
+    }
+    .nav_list {
+        list-style: none;
+        margin: 0;
+        padding: 10px 0;
+    }
+    .nav_item {margin: 4px 0;}
+    #content {
+        float: left;
+        width: 600px;
+        display: table-cell;
+    }
+    #footer {
+        text-align: center;
+        border-top: 1px solid #aaa;
+        margin: 20px 20px 0;
+        font-size: 12px
+    }
+</style>
+</html>

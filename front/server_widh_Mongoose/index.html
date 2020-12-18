@@ -1,0 +1,112 @@
+<html>
+<body>
+    <p id="stdent"></p>
+    <button id="btn">take a list</button>
+
+    
+        <p>find data</p>
+        <input type="text" id="nameSr", placehlder="name">
+        <input id="find" type="button">
+
+        <p>input Data</p>
+        <input type="text" id="name", placehlder="name">
+        <input type="text" id="address", placehlder="address">
+        <input type="number" id="age", placehlder="age">
+        <input id="input" type="button">
+    
+        <p>Delete</p>
+        <input type="text" id="dname", placehlder="name">
+        <input id="delete" type="button">
+
+        <p>Update</p>
+        <input type="text" id="uname", placehlder="name">
+        <input type="text" id="uaddress", placehlder="address">
+        <input type="number" id="uage", placehlder="age">
+        <input id="update" type="button">
+
+</body>
+<script>
+    document.getElementById("btn").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/api/list');
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+                //홈페이지에 나타내는 코드
+            }
+        }
+        xhr.send(); 
+    })
+    document.getElementById("find").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        let box = document.getElementById("nameSr");
+        let data = 'name='+box.value
+        console.log(data)
+        xhr.open('POST', 'http://localhost:3000/api/search');
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+                //홈페이지에 나타내는 코드
+            }
+        }
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send(data); 
+    })
+   
+    document.getElementById("input").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        let data = ''
+
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        let age = document.getElementById("age").value;
+
+        data = "name="+name+"&address="+address+"&age="+age;
+
+        xhr.open('POST', 'http://localhost:3000/api/post');
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+            }
+        }
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send(data); 
+    })
+
+    document.getElementById("delete").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        var name = document.getElementById("dname").value;
+        var data = "name="+name
+        xhr.open('DELETE', 'http://localhost:3000/api/delete');
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+                //홈페이지에 나타내는 코드
+            }
+        }
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        xhr.send(data); 
+    })
+
+    document.getElementById("update").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        var name = document.getElementById("uname").value;
+        var address = document.getElementById("uaddress").value;
+        var age = document.getElementById("uage").value;
+        var data='';
+
+        data = "name="+name+"&address="+address+"&age="+age;
+        
+        xhr.open('PUT', 'http://localhost:3000/api/update');
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+                //홈페이지에 나타내는 코드
+            }
+        }
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        xhr.send(data); 
+    })
+</script>
+
+</html>

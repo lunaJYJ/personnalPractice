@@ -1,0 +1,302 @@
+body {
+    margin : 0;
+}
+/* 항상 body는 기본마진이 있다. 기본 마진 초기화 */
+
+@media (min-width: 1240px) { 
+    /* 최소 넓이가 1240 -> 일반적 컴퓨터 */
+    .step_wrapper {
+        width: 960px;
+    }
+    .step_card {
+        width: 390px;
+        height: 88px;
+        margin : 0px 0px 20px 0px;
+        padding: 30px;
+        display: inline-block;
+        /* 인라인블록으로 요소가 옆에 박스요소가 옆에 배치될 수 있도록 설정 */
+        vertical-align: middle;
+        /* vertical-align은 항상display와 같이 사용. 중앙에 정렬*/
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        /*세로 길이의 반*/
+    }
+    
+    .step_card:nth-child(2n-1){
+        margin : 0px 20px 20px 0px;
+    }
+    
+    
+    .step_card .step_img {
+        box-sizing: border-box;
+        width: 88px;
+        height: 88px;
+        /* border: 1px solid black; */
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 35px;
+    }
+    .step_card .step_img img {
+        width: 36px;
+        height: 36px;
+        margin-top: 25px;
+    }
+    
+    .step_body {
+        position: relative;
+        display: inline-block;
+        height: 88px;
+        width: 265px;
+        /* vertical-align: middle; */
+        float: right;
+    }
+    .step_body .step_body_info {
+        font-size : 14px;
+        color: #707070;
+        letter-spacing: -0.28px;
+        top: 0;
+        margin-bottom: 10px;
+    }
+    .step_body .step_body_title {
+        font-size : 20px;
+        color: #333333;
+        letter-spacing: -0.4px;
+        /*글자가 입력되면, 글자가 다음줄을위해 글자 위아래로 조그만 공백이 있는데 그걸 깔끔히 정리*/
+        line-height: 1;
+        /*행간 정하기*/
+    }
+    
+    .step_body .step_body_title > p {
+        margin: 0px;
+    }
+    .step_body .step_body_content {
+        font-size : 24px;
+        color: #7B4FB8;
+        letter-spacing: -0.48px;
+        line-height: 1;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .step_body .step_body_content > p {
+        margin: 0px;
+        
+    }
+    
+    
+    .step_body .step_body_content > p  span {
+        font-size: 14px;
+        color: #707070;
+        letter-spacing: -0.28px;
+    }
+    
+    
+    .step_body .step_card_dday {
+        position: absolute;
+        top : 0;
+        right: 0;
+        color: #7B4FB8;
+        width: 56px;
+        height: 22px;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        border : 1px solid #7B4FB8;
+        border-radius: 11px;
+        text-align: center;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1239px) {
+
+    .step_wrapper {
+        width: 100vw;
+    }
+    .step_card {
+        width: calc(50vw - 68px);
+        height: 88px;
+        margin : 0px 0px 20px 0px;
+        padding: 30px;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+    }
+    
+    .step_card:nth-child(2n-1){
+        margin : 0px 10px 10px 0px;
+    }
+    
+    
+    .step_card .step_img {
+        box-sizing: border-box;
+        width: 62px;
+        height: 62px;
+        /* border: 1px solid black; */
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 35px;
+    }
+    .step_card .step_img img {
+        width: 26px;
+        height: 26px;
+        margin-top: 25px;
+    }
+    
+    .step_body {
+        position: relative;
+        display: inline-block;
+        height: 88px;
+        width: calc(100% - 100px);
+        /* vertical-align: middle; */
+        float: right
+    }
+    .step_body .step_body_info {
+        font-size : 14px;
+        color: #707070;
+        letter-spacing: -0.28px;
+        top: 0;
+        margin-bottom: 10px;
+    }
+    .step_body .step_body_title {
+        font-size : 20px;
+        color: #333333;
+        letter-spacing: -0.4px;
+        line-height: 1;
+    }
+    
+    .step_body .step_body_title > p {
+        margin: 0px;
+    }
+    .step_body .step_body_content {
+        font-size : 24px;
+        color: #7B4FB8;
+        letter-spacing: -0.48px;
+        line-height: 1;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .step_body .step_body_content > p {
+        margin: 0px;
+        
+    }
+    
+    
+    .step_body .step_body_content > p  span {
+        font-size: 14px;
+        color: #707070;
+        letter-spacing: -0.28px;
+    }
+    
+    
+    .step_body .step_card_dday {
+        position: absolute;
+        top : 0;
+        right: 0;
+        color: #7B4FB8;
+        width: 56px;
+        height: 22px;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        border : 1px solid #7B4FB8;
+        border-radius: 11px;
+        text-align: center;
+        line-height: 20px;
+    }
+}
+
+@media (max-width:767px) {
+    
+    .step_wrapper {
+        width: 100vw;
+    }
+    .step_card {
+        width: calc(100vw - 60px);
+        height: 88px;
+        margin : 0px 0px 20px 0px;
+        padding: 30px;
+        display: block;
+        vertical-align: middle;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+    }
+    
+    .step_card:nth-child(2n-1){
+        margin : 0px 10px 10px 0px;
+    }
+    
+    
+    .step_card .step_img {
+        display: none;
+    }
+    .step_card .step_img img {
+        width: 36px;
+        height: 36px;
+        margin-top: 25px;
+    }
+    
+    .step_body {
+        position: relative;
+        display: inline-block;
+        height: 88px;
+        width: calc(100vw - 60px);
+        /* vertical-align: middle; */
+        float: right
+    }
+    .step_body .step_body_info {
+        font-size : 14px;
+        color: #707070;
+        letter-spacing: -0.28px;
+        top: 0;
+        margin-bottom: 10px;
+    }
+    .step_body .step_body_title {
+        font-size : 20px;
+        color: #333333;
+        letter-spacing: -0.4px;
+        line-height: 1;
+    }
+    
+    .step_body .step_body_title > p {
+        margin: 0px;
+    }
+    .step_body .step_body_content {
+        font-size : 24px;
+        color: #7B4FB8;
+        letter-spacing: -0.48px;
+        line-height: 1;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .step_body .step_body_content > p {
+        margin: 0px;
+        
+    }
+    
+    
+    .step_body .step_body_content > p  span {
+        font-size: 14px;
+        color: #707070;
+        letter-spacing: -0.28px;
+    }
+    
+    
+    .step_body .step_card_dday {
+        position: absolute;
+        top : 0;
+        right: 0;
+        color: #7B4FB8;
+        width: 56px;
+        height: 22px;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        border : 1px solid #7B4FB8;
+        border-radius: 11px;
+        text-align: center;
+        line-height: 20px;
+    }
+}

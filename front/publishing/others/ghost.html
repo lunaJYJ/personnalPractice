@@ -1,0 +1,100 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="x_o">
+                <ul>
+                    <li><i class="material-icons func">close</i></li>
+                    <li><i class="material-icons func">crop_square</i></li>
+                    <li><i class="material-icons func">remove</i></li>
+                </ul>
+            </div>
+            <div id="mainWrapper">
+                <div id="list">
+                    <div style="display:flex;">
+                        <div style="margin-right:145px; font-weight: bold;">Friends</div>
+                        <div style="float: left;"><i class="material-icons" style="color: #d6d6d6;">person_add_alt_1</i></div>
+                    </div>
+                    <input type="text" placeholder="..Serach by name"></input>
+
+                    <div style="display: flex;">
+                        <div><img src="5.jpg" class="profile"/></div>
+                        <div style="margin-left: 10px; padding-top: 8px;">
+                            <p class="userName" style="">Ghost</p>
+                            <p class="userdicrip">야옹..~</p>
+                        </div>
+                    </div>
+
+                    <div class="bar"></div>
+                    <p class="userdicrip">Channel</p>
+                    <div style="display: flex;">
+                        <div><img src="channel.png" class="profile" style="margin-top: 1px;" /></div>
+                        <p class="userName" style="margin-top: 10px; margin-left: 10px">Channel <span class="userdicrip">4</span></p>
+                    </div>
+
+                    <div class="bar"></div>
+                </div>
+                <div id="chatRoom">
+
+                </div>
+                <div id="room">
+
+                </div>
+                <div id="moreOver">
+
+                </div>
+            </div>
+            <div id="navbar">
+                <ul>
+                    <li><i class="material-icons navicon">person</i></li>
+                    <li><i class="material-icons navicon_sub">chat_bubble</i></li>
+                    <li><i class="material-icons navicon_sub">more_horiz</i></li>
+                </ul>
+            </div>
+                <footer id="adv">
+                    <img src="ad1.png" width="302px", height="73px"/>
+                </footer>
+        </div>
+    </body>
+    <style>
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+        ul {list-style: none; padding-left:0px; margin-top: 0px;}
+        #wrapper {width: 302px; height: 602px;  float:left; box-shadow: #adadad 2px 2px 2px 2px;}
+        #x_o {width: 100px; float:right;}
+
+        .func {color:#adadad; font-size: 10px; float: right; margin-left: 5px; padding: 2px; margin-bottom:10px}
+        .profile {margin-top: 10px; border-radius:15px; width: 40px;}
+
+        #mainWrapper {width:83%; float: right;}
+            .bar {margin-top: 10px;width:225px; border-top: #dedede 1px solid}
+        #navbar {background-color: #e3e3e3; width:17%; height:529px; }
+            .navicon {margin-top:30px; margin-left: 12px; color:#adadad}
+            .navicon_sub {margin-top: 18px; margin-left: 12px; color:#adadad}
+
+
+        #list {width: 80%; height: max-content; padding-left:5%;}
+        input[type=text] {border: none; background-color: #dedede;border-radius: 25px; width:230px; margin-top:10px; height:20px; margin-bottom: 5px;}
+        .userName {font-weight: bold; font-size: 9px; margin-bottom: -5px;}
+        .userdicrip {font-size: 8px; color: gray;}
+        #chatroom #room #moreOver {visibility: hidden;}
+
+        #adv {width: 100vh; height:70px}
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            /*font-size: 24px;  /* Preferred icon size */
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            }
+    </style>
+</html>
