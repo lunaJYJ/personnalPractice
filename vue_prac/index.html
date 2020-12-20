@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Vue Smple</title>
+    </head>
+    <body>
+        <div class="app">
+            <button>컴포넌트 등록</button>
+            <my-compo></my-compo>
+            
+        </div>
+        <local-comp></local-comp>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            Vue.component('my-compo' , {
+                template : '<div>전역 컴포넌트가 등록되었습니다!</div>'
+            })
+            var cpm = {
+                template : '<p>This is local component</p>'
+            };
+            new Vue({
+                el : ".app",
+                data : {
+                    message : 'Hello Vue.js!'
+                },
+                components : {
+                    'local-comp' : cpm
+                }
+                // beforeCreate : function() {
+                //     console.log("before Create");
+                // },
+                // created : function() {
+                //     console.log("created");
+                // },
+                // mounted : function() {
+                //     console.log("mounted");
+                //     this.message = 'hello vue_small case'
+                // },
+                // updated : function() {
+                //     console.log("updated");
+                // }
+            });
+        </script>
+    </body>
+</html>
